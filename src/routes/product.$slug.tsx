@@ -35,7 +35,7 @@ export const Route = createFileRoute("/product/$slug")({
 });
 
 function ProductPage() {
-  const product = Route.useLoaderData();
+  const product = Route.useLoaderData() as Product;
   const add = useCart((s) => s.add);
   const navigate = useNavigate();
   const [size, setSize] = useState(product.sizes[Math.min(1, product.sizes.length - 1)]);
