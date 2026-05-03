@@ -2,6 +2,10 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import heroImg from "@/assets/hero-main.jpg";
 import splitToss from "@/assets/split-toss.jpg";
 import splitPass from "@/assets/split-pass.jpg";
+import splitVilla from "@/assets/split-villa.jpg";
+import splitBalcony from "@/assets/split-balcony.jpg";
+import editorialParis from "@/assets/editorial-paris.jpg";
+import editorialCoast from "@/assets/editorial-coast.jpg";
 import { products } from "@/data/products";
 import { ProductCard } from "@/components/site/ProductCard";
 import { SplitFrame } from "@/components/site/SplitFrame";
@@ -17,10 +21,21 @@ export const Route = createFileRoute("/")({
 });
 
 function Home() {
-  const knit = products.find((p) => p.slug === "ribbed-turtleneck")!;
-  const shirt = products.find((p) => p.slug === "silk-blouse")!;
-  const linen = products.find((p) => p.slug === "silk-blouse")!;
-  const dress = products.find((p) => p.slug === "rust-midi-dress")!;
+  const find = (slug: string) => products.find((p) => p.slug === slug)!;
+  const knit = find("ribbed-turtleneck");
+  const shirt = find("silk-blouse");
+  const linen = find("silk-blouse");
+  const dress = find("rust-midi-dress");
+  const gown = find("emerald-velvet-gown");
+  const cashmere = find("burgundy-cashmere-coat");
+  const pajama = find("sienna-silk-pajama-set");
+  const shearling = find("embroidered-shearling");
+  const heirloom = [
+    find("burgundy-cashmere-coat"),
+    find("emerald-velvet-gown"),
+    find("caramel-croc-bag"),
+    find("embroidered-shearling"),
+  ];
   const featured = products.slice(0, 6);
 
   return (
@@ -44,7 +59,7 @@ function Home() {
             </h1>
             <p className="mt-8 max-w-md text-lg text-muted-foreground italic">
               The Autumn issue: corduroy that softens, knits that remember, leather that
-              keeps a story. Twenty-two pieces, made the slow way.
+              keeps a story. Twenty-four pieces, made the slow way.
             </p>
             <div className="mt-10 flex items-center gap-6">
               <Link
@@ -83,7 +98,7 @@ function Home() {
 
       {/* MARQUEE STRIP */}
       <div className="bg-ink text-cream py-3 border-y border-ink overflow-hidden">
-        <div className="font-display italic text-2xl flex gap-12 whitespace-nowrap animate-[marquee_40s_linear_infinite]" style={{ animation: "marquee 40s linear infinite" }}>
+        <div className="font-display italic text-2xl flex gap-12 whitespace-nowrap" style={{ animation: "marquee 40s linear infinite" }}>
           {Array.from({ length: 6 }).map((_, i) => (
             <span key={i} className="flex items-center gap-12">
               <span>Made slowly in Italy</span><span className="text-primary">✦</span>
@@ -105,8 +120,92 @@ function Home() {
         />
       </section>
 
+      {/* EDITORIAL DOUBLE PAGE — PARIS / COAST */}
+      <section className="py-20 bg-cream/40">
+        <div className="mx-auto max-w-[1500px] px-6 lg:px-10">
+          <div className="flex items-end justify-between mb-10 border-b border-ink pb-4">
+            <div>
+              <div className="smallcaps text-muted-foreground">Spread · pp. 24–25</div>
+              <h2 className="font-display text-4xl md:text-5xl mt-2 italic">A weekend, told in two cities.</h2>
+            </div>
+            <div className="hidden md:block font-mono text-xs text-muted-foreground">
+              Photographed by R. Castel
+            </div>
+          </div>
+          <div className="grid md:grid-cols-12 gap-6 md:gap-10 items-start">
+            <figure className="md:col-span-5 relative">
+              <div className="aspect-[4/5] overflow-hidden bg-muted">
+                <img src={editorialParis} alt="Burgundy velvet suit, Paris" loading="lazy" className="w-full h-full object-cover" />
+              </div>
+              <figcaption className="mt-3 smallcaps text-muted-foreground flex justify-between">
+                <span>Fig. 01 — Saint-Germain, 16:42</span>
+                <span>F2.8 · 1/125</span>
+              </figcaption>
+            </figure>
+            <div className="md:col-span-2 md:pt-12">
+              <div className="font-display text-7xl text-primary leading-none">‟</div>
+              <p className="font-display italic text-xl mt-4 leading-snug">
+                She ordered the espresso. She didn't drink it.
+              </p>
+            </div>
+            <figure className="md:col-span-5 md:pt-20 relative">
+              <div className="aspect-[5/4] overflow-hidden bg-muted">
+                <img src={editorialCoast} alt="Knitwear on the Italian coast" loading="lazy" className="w-full h-full object-cover" />
+              </div>
+              <figcaption className="mt-3 smallcaps text-muted-foreground flex justify-between">
+                <span>Fig. 02 — Camogli, 17:08</span>
+                <span>F4 · 1/250</span>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      {/* THE HEIRLOOM EDIT */}
+      <section className="py-24 bg-ink text-cream">
+        <div className="mx-auto max-w-[1500px] px-6 lg:px-10">
+          <div className="grid md:grid-cols-12 gap-10 items-end mb-12 border-b border-cream/30 pb-6">
+            <div className="md:col-span-7">
+              <div className="smallcaps text-primary">Section IV · Capsule</div>
+              <h2 className="font-display text-5xl md:text-6xl mt-3 italic">The Heirloom Edit</h2>
+            </div>
+            <p className="md:col-span-5 text-cream/80 italic">
+              Six pieces designed to outlive the issue. Cashmere coats, hand-beaded shearling,
+              embossed Florentine leather. Cut once, kept forever.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-12">
+            {heirloom.map((p, i) => (
+              <Link key={p.id} to="/product/$slug" params={{ slug: p.slug }} className="group block">
+                <div className="relative overflow-hidden aspect-[4/5] bg-cream/10">
+                  <img src={p.image} alt={p.name} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
+                  <div className="absolute top-3 left-3 smallcaps text-cream/90">№ {String(19 + i).padStart(2, "0")}</div>
+                </div>
+                <div className="pt-4 flex items-baseline justify-between gap-4">
+                  <div>
+                    <div className="smallcaps text-cream/60">{p.category}</div>
+                    <h3 className="font-display text-xl leading-tight mt-1">{p.name}</h3>
+                  </div>
+                  <div className="font-mono text-sm">${p.price}</div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SPLIT FRAME — VILLA (gown vs cashmere coat) */}
+      <section className="py-24">
+        <SplitFrame
+          image={splitVilla}
+          left={gown}
+          right={cashmere}
+          caption="A villa at six. The wine, the wool, the wait."
+        />
+      </section>
+
       {/* EDITOR'S NOTE */}
-      <section className="py-24 border-y border-ink/20">
+      <section className="py-24 border-y border-ink/20 bg-cream/40">
         <div className="mx-auto max-w-[1500px] px-6 lg:px-10 grid md:grid-cols-12 gap-10">
           <div className="md:col-span-3 smallcaps text-muted-foreground">
             From the editor
@@ -114,7 +213,7 @@ function Home() {
           <div className="md:col-span-9">
             <p className="font-display text-3xl md:text-4xl leading-snug italic">
               "We started ATELIER 22 because we wanted clothes that get better
-              with the years — not faster, not louder. Twenty-two pieces, twenty-two
+              with the years — not faster, not louder. Twenty-four pieces, twenty-four
               decisions, made by hand in workshops we visit every season."
             </p>
             <div className="mt-6 smallcaps text-muted-foreground">— Inês Marques, Founder</div>
@@ -122,13 +221,23 @@ function Home() {
         </div>
       </section>
 
-      {/* SPLIT FRAME — PASS */}
+      {/* SPLIT FRAME — BALCONY (pajama vs shearling) */}
       <section className="py-24">
+        <SplitFrame
+          image={splitBalcony}
+          left={pajama}
+          right={shearling}
+          reverseCaption
+          caption="After hours. Silk on the left, shearling on the right."
+        />
+      </section>
+
+      {/* SPLIT FRAME — PASS */}
+      <section className="py-24 bg-cream/40">
         <SplitFrame
           image={splitPass}
           left={linen}
           right={dress}
-          reverseCaption
           caption="Hand to hand. Two looks meet at the seam."
         />
       </section>
@@ -142,7 +251,7 @@ function Home() {
               <h2 className="font-display text-4xl md:text-5xl mt-2">The Autumn Six</h2>
             </div>
             <Link to="/shop" className="smallcaps border-b border-ink pb-1 hover:text-primary hover:border-primary">
-              View all 18 →
+              View all 24 →
             </Link>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-12">
