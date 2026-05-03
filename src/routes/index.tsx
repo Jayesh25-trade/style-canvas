@@ -129,13 +129,28 @@ function Home() {
         <style>{`@keyframes marquee { from { transform: translateX(0) } to { transform: translateX(-50%) } }`}</style>
       </div>
 
-      {/* SPLIT FRAME — TOSS */}
+      {/* SPLIT FRAME — THROW (cable knit ↔ leather moto) — the hero split */}
       <section className="py-24">
+        <div className="mx-auto max-w-[1500px] px-6 lg:px-10 mb-8">
+          <div className="smallcaps text-muted-foreground">№ 03 · The Cover Story</div>
+          <h2 className="font-display text-4xl md:text-6xl mt-2 italic">Throw &amp; <span className="text-primary">catch</span> — a study in clothed motion.</h2>
+        </div>
         <SplitFrame
-          image={splitToss}
-          left={knit}
-          right={shirt}
-          caption="One frame. Two pieces. The toss before the catch."
+          image={splitThrow}
+          left={cableThrow}
+          right={motoCatch}
+          caption="One frame, two pieces. Cable knit meets Tuscan leather."
+        />
+      </section>
+
+      {/* SPLIT FRAME — LEATHER CATCH */}
+      <section className="py-24 bg-cream/50">
+        <SplitFrame
+          image={splitCatchLeather}
+          left={skirtThrow}
+          right={aviatorCatch}
+          reverseCaption
+          caption="Oxblood pencil. Caramel suede. The seam is the story."
         />
       </section>
 
