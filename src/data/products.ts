@@ -16,6 +16,12 @@ import cardigan from "@/assets/p-cardigan.jpg";
 import jeans from "@/assets/p-jeans.jpg";
 import sunglasses from "@/assets/p-sunglasses.jpg";
 import coat from "@/assets/p-coat.jpg";
+import cashmereCoat from "@/assets/p-cashmere-coat.jpg";
+import velvetGown from "@/assets/p-velvet-gown.jpg";
+import crocBag from "@/assets/p-croc-bag.jpg";
+import woolCape from "@/assets/p-wool-cape.jpg";
+import silkPajama from "@/assets/p-silk-pajama.jpg";
+import shearling from "@/assets/p-shearling.jpg";
 
 export type Product = {
   id: string;
@@ -50,6 +56,12 @@ export const products: Product[] = [
   { id: "16", slug: "indigo-straight-jeans", name: "Indigo Straight Jeans", price: 195, image: jeans, category: "Bottoms", collection: "Studio Basics", color: "Indigo", story: "A straight-leg in 13.5oz Japanese selvedge. The pair that improves with wear.", details: ["13.5oz Kaihara denim", "Selvedge outseam", "Made in Japan"], sizes: ["24", "26", "28", "30", "32"] },
   { id: "17", slug: "round-frame-sunglasses", name: "Round Frame Sunglasses", price: 220, image: sunglasses, category: "Accessories", collection: "The Studio Carry", color: "Gold", story: "Hand-polished gold frames with brown gradient lenses. A clean 70s silhouette.", details: ["Italian acetate", "Gold-plated frame", "UV400"], sizes: ["One Size"] },
   { id: "18", slug: "rust-overcoat", name: "Rust Overcoat", price: 690, image: coat, category: "Outerwear", collection: "Issue 22 — Sundown", color: "Rust", story: "A long single-breasted overcoat in a soft Italian wool. The piece you keep forever.", details: ["80% wool / 20% cashmere", "Bemberg lining", "Made in Italy"], sizes: ["XS", "S", "M", "L", "XL"] },
+  { id: "19", slug: "burgundy-cashmere-coat", name: "Burgundy Cashmere Coat", price: 1280, image: cashmereCoat, category: "Outerwear", collection: "The Heirloom Edit", color: "Burgundy", story: "Spun from pure Mongolian cashmere and tailored over six fittings. The coat that becomes the wardrobe.", details: ["100% Mongolian cashmere", "Hand-stitched lapels", "Silk twill lining", "Made in Italy"], sizes: ["XS", "S", "M", "L", "XL"] },
+  { id: "20", slug: "emerald-velvet-gown", name: "Emerald Velvet Gown", price: 980, image: velvetGown, category: "Dresses", collection: "After Hours", color: "Emerald", story: "Floor-skimming silk velvet with a hand-draped bodice. Made for low light and long evenings.", details: ["Italian silk velvet", "Hand-draped bodice", "Concealed back zip", "Atelier finished in Paris"], sizes: ["XS", "S", "M", "L"] },
+  { id: "21", slug: "caramel-croc-bag", name: "Caramel Croc Bag", price: 1450, image: crocBag, category: "Accessories", collection: "The Heirloom Edit", color: "Caramel", story: "Embossed Tuscan leather, cast brass hardware, hand-stitched in a Florence workshop of nine.", details: ["Embossed Italian leather", "Solid brass hardware", "Suede-lined interior", "Made in Florence"], sizes: ["One Size"] },
+  { id: "22", slug: "cream-wool-cape", name: "Cream Wool Cape", price: 740, image: woolCape, category: "Outerwear", collection: "Issue 22 — Sundown", color: "Cream", story: "A double-faced wool cape with horn buttons. Drawn from a 1973 Saint Laurent reference in our archive.", details: ["Double-faced virgin wool", "Horn buttons", "Made in Portugal"], sizes: ["XS/S", "M/L"] },
+  { id: "23", slug: "sienna-silk-pajama-set", name: "Sienna Silk Pajama Set", price: 520, image: silkPajama, category: "Tops", collection: "After Hours", color: "Sienna Stripe", story: "Two pieces in heavy charmeuse silk. Cut to be worn out, not just in.", details: ["22mm mulberry silk", "Mother-of-pearl buttons", "Piped trim", "Sold as a set"], sizes: ["XS", "S", "M", "L"] },
+  { id: "24", slug: "embroidered-shearling", name: "Embroidered Shearling Jacket", price: 1680, image: shearling, category: "Outerwear", collection: "The Heirloom Edit", color: "Cognac", story: "Spanish merino shearling with hand-beaded cuffs. The jacket that walks into the room before you do.", details: ["Spanish merino shearling", "Hand-beaded sleeve detail", "Horn toggles", "Made in Madrid"], sizes: ["S", "M", "L"] },
 ];
 
 export const getProduct = (slug: string) => products.find((p) => p.slug === slug);
