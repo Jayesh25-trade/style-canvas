@@ -5,7 +5,6 @@ import splitCatchLeather from "@/assets/split-catch-leather.jpg";
 import splitVillaLeather from "@/assets/split-villa-leather.jpg";
 import splitPass from "@/assets/split-pass.jpg";
 import splitBalcony from "@/assets/split-balcony.jpg";
-import splitBalcony from "@/assets/split-balcony.jpg";
 import editorialParis from "@/assets/editorial-paris.jpg";
 import editorialCoast from "@/assets/editorial-coast.jpg";
 import { products } from "@/data/products";
