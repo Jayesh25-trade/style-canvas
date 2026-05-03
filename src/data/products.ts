@@ -22,6 +22,12 @@ import crocBag from "@/assets/p-croc-bag.jpg";
 import woolCape from "@/assets/p-wool-cape.jpg";
 import silkPajama from "@/assets/p-silk-pajama.jpg";
 import shearling from "@/assets/p-shearling.jpg";
+import leatherMoto from "@/assets/p-leather-moto.jpg";
+import leatherBlazer from "@/assets/p-leather-blazer.jpg";
+import aviator from "@/assets/p-aviator.jpg";
+import leatherSkirt from "@/assets/p-leather-skirt.jpg";
+import leatherTrench from "@/assets/p-leather-trench.jpg";
+import flightJacket from "@/assets/p-flight-jacket.jpg";
 
 export type Product = {
   id: string;
@@ -62,6 +68,12 @@ export const products: Product[] = [
   { id: "22", slug: "cream-wool-cape", name: "Cream Wool Cape", price: 740, image: woolCape, category: "Outerwear", collection: "Issue 22 — Sundown", color: "Cream", story: "A double-faced wool cape with horn buttons. Drawn from a 1973 Saint Laurent reference in our archive.", details: ["Double-faced virgin wool", "Horn buttons", "Made in Portugal"], sizes: ["XS/S", "M/L"] },
   { id: "23", slug: "sienna-silk-pajama-set", name: "Sienna Silk Pajama Set", price: 520, image: silkPajama, category: "Tops", collection: "After Hours", color: "Sienna Stripe", story: "Two pieces in heavy charmeuse silk. Cut to be worn out, not just in.", details: ["22mm mulberry silk", "Mother-of-pearl buttons", "Piped trim", "Sold as a set"], sizes: ["XS", "S", "M", "L"] },
   { id: "24", slug: "embroidered-shearling", name: "Embroidered Shearling Jacket", price: 1680, image: shearling, category: "Outerwear", collection: "The Heirloom Edit", color: "Cognac", story: "Spanish merino shearling with hand-beaded cuffs. The jacket that walks into the room before you do.", details: ["Spanish merino shearling", "Hand-beaded sleeve detail", "Horn toggles", "Made in Madrid"], sizes: ["S", "M", "L"] },
+  { id: "25", slug: "tobacco-leather-moto", name: "Tobacco Leather Moto", price: 890, image: leatherMoto, category: "Outerwear", collection: "The Leather Edit", color: "Tobacco", story: "A relaxed moto cut from buttery Tuscan lambskin. Asymmetric zip, soft enough to fold over your arm.", details: ["Italian lambskin leather", "YKK Excella zips", "Bemberg lining", "Made in Florence"], sizes: ["XS", "S", "M", "L", "XL"] },
+  { id: "26", slug: "chocolate-leather-blazer", name: "Chocolate Leather Blazer", price: 1120, image: leatherBlazer, category: "Outerwear", collection: "The Leather Edit", color: "Chocolate", story: "Tailored like a suit jacket, made of leather. Peak lapels and a single-button stance.", details: ["Italian nappa leather", "Half-canvas construction", "Silk lining", "Made in Italy"], sizes: ["XS", "S", "M", "L", "XL"] },
+  { id: "27", slug: "caramel-suede-aviator", name: "Caramel Suede Aviator", price: 940, image: aviator, category: "Outerwear", collection: "The Leather Edit", color: "Caramel", story: "Cropped aviator in caramel suede with a curly shearling collar. The 70s, refined.", details: ["Spanish suede shell", "Merino shearling collar", "Brass hardware", "Made in Spain"], sizes: ["S", "M", "L", "XL"] },
+  { id: "28", slug: "oxblood-leather-skirt", name: "Oxblood Leather Skirt", price: 480, image: leatherSkirt, category: "Bottoms", collection: "The Leather Edit", color: "Oxblood", story: "A high-waisted midi pencil cut from glove-soft lambskin. The skirt that does the work.", details: ["Italian lambskin", "Concealed back zip", "Cupro lining", "Made in Portugal"], sizes: ["XS", "S", "M", "L"] },
+  { id: "29", slug: "cognac-leather-trench", name: "Cognac Leather Trench", price: 1380, image: leatherTrench, category: "Outerwear", collection: "The Leather Edit", color: "Cognac", story: "A long trench reimagined in supple cognac leather. The coat that ends every conversation about coats.", details: ["Italian calfskin", "Storm flap & belt", "Silk twill lining", "Made in Italy"], sizes: ["XS", "S", "M", "L", "XL"] },
+  { id: "30", slug: "black-flight-jacket", name: "Black Flight Jacket", price: 760, image: flightJacket, category: "Outerwear", collection: "The Leather Edit", color: "Black", story: "Heavy black leather with a shearling collar. Borrowed shape, kept silhouette.", details: ["Cowhide leather", "Shearling collar", "Ribbed cuffs and hem", "Made in Italy"], sizes: ["S", "M", "L", "XL"] },
 ];
 
 export const getProduct = (slug: string) => products.find((p) => p.slug === slug);

@@ -1,8 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import heroImg from "@/assets/hero-main.jpg";
-import splitToss from "@/assets/split-toss.jpg";
+import splitThrow from "@/assets/split-throw.jpg";
+import splitCatchLeather from "@/assets/split-catch-leather.jpg";
+import splitVillaLeather from "@/assets/split-villa-leather.jpg";
 import splitPass from "@/assets/split-pass.jpg";
-import splitVilla from "@/assets/split-villa.jpg";
 import splitBalcony from "@/assets/split-balcony.jpg";
 import editorialParis from "@/assets/editorial-paris.jpg";
 import editorialCoast from "@/assets/editorial-coast.jpg";
@@ -22,19 +23,31 @@ export const Route = createFileRoute("/")({
 
 function Home() {
   const find = (slug: string) => products.find((p) => p.slug === slug)!;
-  const knit = find("ribbed-turtleneck");
-  const shirt = find("silk-blouse");
   const linen = find("silk-blouse");
   const dress = find("rust-midi-dress");
-  const gown = find("emerald-velvet-gown");
-  const cashmere = find("burgundy-cashmere-coat");
   const pajama = find("sienna-silk-pajama-set");
   const shearling = find("embroidered-shearling");
+  // Split frame pairings
+  const cableThrow = find("cable-knit-cardigan");
+  const motoCatch = find("tobacco-leather-moto");
+  const skirtThrow = find("oxblood-leather-skirt");
+  const aviatorCatch = find("caramel-suede-aviator");
+  const cashmereVilla = find("burgundy-cashmere-coat");
+  const aviatorVilla = find("caramel-suede-aviator");
+
   const heirloom = [
     find("burgundy-cashmere-coat"),
     find("emerald-velvet-gown"),
     find("caramel-croc-bag"),
     find("embroidered-shearling"),
+  ];
+  const leatherEdit = [
+    find("tobacco-leather-moto"),
+    find("chocolate-leather-blazer"),
+    find("caramel-suede-aviator"),
+    find("cognac-leather-trench"),
+    find("oxblood-leather-skirt"),
+    find("black-flight-jacket"),
   ];
   const featured = products.slice(0, 6);
 
@@ -110,13 +123,28 @@ function Home() {
         <style>{`@keyframes marquee { from { transform: translateX(0) } to { transform: translateX(-50%) } }`}</style>
       </div>
 
-      {/* SPLIT FRAME — TOSS */}
+      {/* SPLIT FRAME — THROW (cable knit ↔ leather moto) — the hero split */}
       <section className="py-24">
+        <div className="mx-auto max-w-[1500px] px-6 lg:px-10 mb-8">
+          <div className="smallcaps text-muted-foreground">№ 03 · The Cover Story</div>
+          <h2 className="font-display text-4xl md:text-6xl mt-2 italic">Throw &amp; <span className="text-primary">catch</span> — a study in clothed motion.</h2>
+        </div>
         <SplitFrame
-          image={splitToss}
-          left={knit}
-          right={shirt}
-          caption="One frame. Two pieces. The toss before the catch."
+          image={splitThrow}
+          left={cableThrow}
+          right={motoCatch}
+          caption="One frame, two pieces. Cable knit meets Tuscan leather."
+        />
+      </section>
+
+      {/* SPLIT FRAME — LEATHER CATCH */}
+      <section className="py-24 bg-cream/50">
+        <SplitFrame
+          image={splitCatchLeather}
+          left={skirtThrow}
+          right={aviatorCatch}
+          reverseCaption
+          caption="Oxblood pencil. Caramel suede. The seam is the story."
         />
       </section>
 
@@ -194,14 +222,37 @@ function Home() {
         </div>
       </section>
 
-      {/* SPLIT FRAME — VILLA (gown vs cashmere coat) */}
+      {/* SPLIT FRAME — VILLA LEATHER (cashmere ↔ aviator) */}
       <section className="py-24">
         <SplitFrame
-          image={splitVilla}
-          left={gown}
-          right={cashmere}
-          caption="A villa at six. The wine, the wool, the wait."
+          image={splitVillaLeather}
+          left={cashmereVilla}
+          right={aviatorVilla}
+          caption="A villa at six. The wine, the wool, the leather."
         />
+      </section>
+
+      {/* THE LEATHER EDIT — magazine grid for jackets */}
+      <section className="py-24 border-t border-ink/20">
+        <div className="mx-auto max-w-[1500px] px-6 lg:px-10">
+          <div className="grid md:grid-cols-12 gap-10 items-end mb-12 border-b border-ink pb-6">
+            <div className="md:col-span-7">
+              <div className="smallcaps text-primary">Section V · The Leather Edit</div>
+              <h2 className="font-display text-5xl md:text-7xl mt-3 italic leading-[0.95]">
+                Six jackets,<br/>one long autumn.
+              </h2>
+            </div>
+            <p className="md:col-span-5 text-muted-foreground italic text-lg">
+              Tobacco, oxblood, caramel, cognac. The skins we returned to this season —
+              cut in Florence, Madrid and Porto, finished slowly by hand.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-12">
+            {leatherEdit.map((p, i) => (
+              <ProductCard key={p.id} product={p} index={i + 25} />
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* EDITOR'S NOTE */}
