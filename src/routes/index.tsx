@@ -228,14 +228,37 @@ function Home() {
         </div>
       </section>
 
-      {/* SPLIT FRAME — VILLA (gown vs cashmere coat) */}
+      {/* SPLIT FRAME — VILLA LEATHER (cashmere ↔ aviator) */}
       <section className="py-24">
         <SplitFrame
-          image={splitVilla}
-          left={gown}
-          right={cashmere}
-          caption="A villa at six. The wine, the wool, the wait."
+          image={splitVillaLeather}
+          left={cashmereVilla}
+          right={aviatorVilla}
+          caption="A villa at six. The wine, the wool, the leather."
         />
+      </section>
+
+      {/* THE LEATHER EDIT — magazine grid for jackets */}
+      <section className="py-24 border-t border-ink/20">
+        <div className="mx-auto max-w-[1500px] px-6 lg:px-10">
+          <div className="grid md:grid-cols-12 gap-10 items-end mb-12 border-b border-ink pb-6">
+            <div className="md:col-span-7">
+              <div className="smallcaps text-primary">Section V · The Leather Edit</div>
+              <h2 className="font-display text-5xl md:text-7xl mt-3 italic leading-[0.95]">
+                Six jackets,<br/>one long autumn.
+              </h2>
+            </div>
+            <p className="md:col-span-5 text-muted-foreground italic text-lg">
+              Tobacco, oxblood, caramel, cognac. The skins we returned to this season —
+              cut in Florence, Madrid and Porto, finished slowly by hand.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-12">
+            {leatherEdit.map((p, i) => (
+              <ProductCard key={p.id} product={p} index={i + 25} />
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* EDITOR'S NOTE */}
