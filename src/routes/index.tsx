@@ -1,5 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import heroImg from "@/assets/hero-main.jpg";
+import splitThrow from "@/assets/split-throw.jpg";
+import splitCatchLeather from "@/assets/split-catch-leather.jpg";
+import splitVillaLeather from "@/assets/split-villa-leather.jpg";
 import splitToss from "@/assets/split-toss.jpg";
 import splitPass from "@/assets/split-pass.jpg";
 import splitVilla from "@/assets/split-villa.jpg";
@@ -30,11 +33,27 @@ function Home() {
   const cashmere = find("burgundy-cashmere-coat");
   const pajama = find("sienna-silk-pajama-set");
   const shearling = find("embroidered-shearling");
+  // Split frame pairings
+  const cableThrow = find("cable-knit-cardigan");
+  const motoCatch = find("tobacco-leather-moto");
+  const skirtThrow = find("oxblood-leather-skirt");
+  const aviatorCatch = find("caramel-suede-aviator");
+  const cashmereVilla = find("burgundy-cashmere-coat");
+  const aviatorVilla = find("caramel-suede-aviator");
+
   const heirloom = [
     find("burgundy-cashmere-coat"),
     find("emerald-velvet-gown"),
     find("caramel-croc-bag"),
     find("embroidered-shearling"),
+  ];
+  const leatherEdit = [
+    find("tobacco-leather-moto"),
+    find("chocolate-leather-blazer"),
+    find("caramel-suede-aviator"),
+    find("cognac-leather-trench"),
+    find("oxblood-leather-skirt"),
+    find("black-flight-jacket"),
   ];
   const featured = products.slice(0, 6);
 
