@@ -3,9 +3,8 @@ import heroImg from "@/assets/hero-main.jpg";
 import splitThrow from "@/assets/split-throw.jpg";
 import splitCatchLeather from "@/assets/split-catch-leather.jpg";
 import splitVillaLeather from "@/assets/split-villa-leather.jpg";
-import splitToss from "@/assets/split-toss.jpg";
 import splitPass from "@/assets/split-pass.jpg";
-import splitVilla from "@/assets/split-villa.jpg";
+import splitBalcony from "@/assets/split-balcony.jpg";
 import splitBalcony from "@/assets/split-balcony.jpg";
 import editorialParis from "@/assets/editorial-paris.jpg";
 import editorialCoast from "@/assets/editorial-coast.jpg";
@@ -25,12 +24,8 @@ export const Route = createFileRoute("/")({
 
 function Home() {
   const find = (slug: string) => products.find((p) => p.slug === slug)!;
-  const knit = find("ribbed-turtleneck");
-  const shirt = find("silk-blouse");
   const linen = find("silk-blouse");
   const dress = find("rust-midi-dress");
-  const gown = find("emerald-velvet-gown");
-  const cashmere = find("burgundy-cashmere-coat");
   const pajama = find("sienna-silk-pajama-set");
   const shearling = find("embroidered-shearling");
   // Split frame pairings
