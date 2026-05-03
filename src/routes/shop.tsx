@@ -12,8 +12,8 @@ export const Route = createFileRoute("/shop")({
       { name: "description", content: "All 18 pieces from the Autumn issue. Outerwear, knitwear, dresses and accessories." },
     ],
   }),
-  validateSearch: (s: Record<string, unknown>) => ({
-    category: (s.category as string) || "All",
+  validateSearch: (s: Record<string, unknown>): { category?: string } => ({
+    category: (s.category as string) || undefined,
   }),
   component: Shop,
 });
@@ -21,7 +21,7 @@ export const Route = createFileRoute("/shop")({
 function Shop() {
   const search = Route.useSearch();
   const navigate = Route.useNavigate();
-  const [active, setActive] = useState<string>(search.category);
+  const [active, setActive] = useState<string>(search.category || "All");
 
   const filtered = active === "All" ? products : products.filter((p) => p.category === active);
 
