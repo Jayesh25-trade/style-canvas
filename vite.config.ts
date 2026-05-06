@@ -5,4 +5,9 @@ export default defineConfig({
   tanstackStart: {
     target: "vercel",
   },
+  vite: {
+    ssr: {
+      noExternal: true,
+    },
+  },
 });
