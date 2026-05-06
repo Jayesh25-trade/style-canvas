@@ -72,17 +72,45 @@ try {
 }
 
 // Function entry shim: bridges Vercel's Node (req, res) API → Web Fetch API
-// TanStack Start server output exposes a `fetch` handler (Fetch API standard).
+// Handles all possible export shapes from TanStack Start server bundle.
 const entryShim = `
-import server from "./${serverEntryFile}";
+import serverModule from "./${serverEntryFile}";
+
+// ── Resolve the fetch handler ─────────────────────────────────────────────────
+// TanStack Start may export (depending on version and target):
+//   (a) default: { fetch(request): Response }   ← Fetch API object (most common)
+//   (b) default: function(request): Response     ← Fetch function directly
+//   (c) default: function(req, res): void        ← Node handler (rare)
+//   (d) named export: { fetch }
+
+const mod = serverModule?.default ?? serverModule;
+let fetchHandler = null;
+let nodeHandler = null;
+
+if (typeof mod === "function") {
+  if (mod.length >= 2) {
+    nodeHandler = mod; // (req, res) style
+  } else {
+    fetchHandler = mod; // (request) fetch style
+  }
+} else if (mod && typeof mod.fetch === "function") {
+  fetchHandler = (req) => mod.fetch(req);
+} else if (mod && typeof mod.handle === "function") {
+  fetchHandler = (req) => mod.handle(req);
+}
+
+const moduleKeys = Object.keys(mod ?? {});
+console.log("[ssr] server module keys:", moduleKeys);
+console.log("[ssr] handler resolved:", fetchHandler ? "fetchHandler" : nodeHandler ? "nodeHandler" : "NONE");
+
+if (!fetchHandler && !nodeHandler) {
+  console.error("[ssr] FATAL: Could not resolve any handler. Module export shape:", moduleKeys);
+}
 
 /** Convert a Node IncomingMessage to a Web Request */
 function toWebRequest(req) {
   const proto = req.headers["x-forwarded-proto"] || "https";
-  const host =
-    req.headers["x-forwarded-host"] ||
-    req.headers.host ||
-    "localhost";
+  const host = req.headers["x-forwarded-host"] || req.headers.host || "localhost";
   const url = new URL(req.url, \`\${proto}://\${host}\`);
 
   const headers = new Headers();
@@ -133,8 +161,18 @@ async function sendWebResponse(webRes, res) {
 /** Vercel serverless function handler */
 export default async function handler(req, res) {
   try {
+    if (nodeHandler) {
+      return nodeHandler(req, res);
+    }
+    if (!fetchHandler) {
+      console.error("[ssr] No handler available");
+      res.statusCode = 500;
+      res.setHeader("content-type", "text/plain");
+      res.end("SSR handler not initialized");
+      return;
+    }
     const webReq = toWebRequest(req);
-    const webRes = await server.fetch(webReq);
+    const webRes = await fetchHandler(webReq);
     await sendWebResponse(webRes, res);
   } catch (err) {
     console.error("[ssr] Unhandled error:", err);
