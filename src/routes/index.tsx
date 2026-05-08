@@ -225,8 +225,22 @@ function Home() {
         </div>
       </section>
 
+      {/* SPLIT FRAME — THE PROPOSAL (leather moto ↔ velvet gown) */}
+      <section className="py-16 md:py-24 bg-cream/40">
+        <div className="mx-auto max-w-[1500px] px-6 lg:px-10 mb-6 md:mb-8">
+          <div className="smallcaps text-muted-foreground">№ 06 · Spread, pp. 38–39</div>
+          <h2 className="font-display text-3xl md:text-5xl mt-2 italic">A question, asked in <span className="text-primary">leather</span> &amp; <span className="text-primary">velvet</span>.</h2>
+        </div>
+        <SplitFrame
+          image={splitProposal}
+          left={proposalLeft}
+          right={proposalRight}
+          caption="One knee, one yes. A tobacco moto meets an emerald gown."
+        />
+      </section>
+
       {/* SPLIT FRAME — VILLA LEATHER (cashmere ↔ aviator) */}
-      <section className="py-24">
+      <section className="py-16 md:py-24">
         <SplitFrame
           image={splitVillaLeather}
           left={cashmereVilla}
