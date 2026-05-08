@@ -21,7 +21,7 @@ const entries = [
 
 function Journal() {
   return (
-    <div className="mx-auto max-w-[1500px] px-6 lg:px-10 py-16">
+    <div className="mx-auto max-w-[1500px] px-4 sm:px-6 lg:px-10 py-16">
       <div className="smallcaps text-muted-foreground">The Journal</div>
       <h1 className="font-display text-6xl md:text-7xl mt-2 mb-12">Field notes.</h1>
       <div className="grid md:grid-cols-3 gap-10">

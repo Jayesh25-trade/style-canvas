@@ -16,7 +16,7 @@ function About() {
   return (
     <div>
       <section className="border-b border-ink/20">
-        <div className="mx-auto max-w-[1500px] px-6 lg:px-10 py-20 grid md:grid-cols-12 gap-10">
+        <div className="mx-auto max-w-[1500px] px-4 sm:px-6 lg:px-10 py-20 grid md:grid-cols-12 gap-10">
           <div className="md:col-span-7">
             <div className="smallcaps text-primary">About the studio</div>
             <h1 className="font-display text-6xl md:text-8xl leading-[0.95] mt-4">
