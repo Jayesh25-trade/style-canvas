@@ -58,29 +58,29 @@ function Home() {
     <div>
       {/* MASTHEAD */}
       <section className="border-b border-ink/20">
-        <div className="mx-auto max-w-[1500px] px-6 lg:px-10 pt-6 pb-4 flex items-center justify-between smallcaps text-muted-foreground">
+        <div className="mx-auto max-w-[1500px] px-4 sm:px-6 lg:px-10 pt-4 pb-3 md:pt-6 md:pb-4 flex flex-wrap items-center justify-between gap-x-4 gap-y-1 smallcaps text-[0.6rem] sm:text-xs text-muted-foreground">
           <div>Vol. XXII · No. 04</div>
           <div>Autumn — MMXXVI</div>
-          <div>$12 · Made in Lisbon</div>
+          <div className="hidden sm:block">$12 · Made in Lisbon</div>
         </div>
       </section>
 
       {/* HERO */}
       <section className="relative">
-        <div className="mx-auto max-w-[1500px] px-6 lg:px-10 pt-10 pb-20 grid lg:grid-cols-12 gap-10 items-end">
+        <div className="mx-auto max-w-[1500px] px-4 sm:px-6 lg:px-10 pt-6 md:pt-10 pb-12 md:pb-20 grid lg:grid-cols-12 gap-8 md:gap-10 items-end">
           <div className="lg:col-span-5 lg:pb-12 order-2 lg:order-1">
-            <div className="smallcaps text-primary mb-6">The Cover Story</div>
-            <h1 className="font-display text-6xl md:text-7xl lg:text-8xl leading-[0.92]">
+            <div className="smallcaps text-primary mb-4 md:mb-6">The Cover Story</div>
+            <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.92]">
               Sundown,<br/><em className="text-primary">slow</em><br/>and warm.
             </h1>
-            <p className="mt-8 max-w-md text-lg text-muted-foreground italic">
+            <p className="mt-6 md:mt-8 max-w-md text-base md:text-lg text-muted-foreground italic">
               The Autumn issue: corduroy that softens, knits that remember, leather that
               keeps a story. Twenty-four pieces, made the slow way.
             </p>
-            <div className="mt-10 flex items-center gap-6">
+            <div className="mt-8 md:mt-10 flex flex-wrap items-center gap-4 md:gap-6">
               <Link
                 to="/shop"
-                className="smallcaps bg-ink text-cream px-7 py-4 hover:bg-primary transition-colors"
+                className="smallcaps bg-ink text-cream px-6 md:px-7 py-3 md:py-4 hover:bg-primary transition-colors"
               >
                 Shop the Issue
               </Link>
@@ -99,13 +99,13 @@ function Home() {
                 height={1920}
                 className="w-full h-full object-cover"
               />
-              <div className="absolute top-4 left-4 smallcaps bg-cream/95 px-3 py-1.5">
+              <div className="absolute top-3 left-3 md:top-4 md:left-4 smallcaps bg-cream/95 px-2.5 md:px-3 py-1 md:py-1.5 text-[0.6rem] md:text-xs">
                 Featured · Look 01
               </div>
-              <div className="absolute bottom-6 right-6 bg-cream/95 px-4 py-3 max-w-xs shadow-lg">
-                <div className="smallcaps text-muted-foreground">Cover Look</div>
-                <div className="font-display text-lg mt-1">Rust Corduroy Blazer</div>
-                <div className="font-mono text-sm mt-1">$320</div>
+              <div className="absolute bottom-3 right-3 md:bottom-6 md:right-6 bg-cream/95 px-3 md:px-4 py-2.5 md:py-3 max-w-[180px] md:max-w-xs shadow-lg">
+                <div className="smallcaps text-muted-foreground text-[0.6rem] md:text-xs">Cover Look</div>
+                <div className="font-display text-base md:text-lg mt-1">Rust Corduroy Blazer</div>
+                <div className="font-mono text-xs md:text-sm mt-1">$320</div>
               </div>
             </div>
           </div>
