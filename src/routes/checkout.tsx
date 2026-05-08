@@ -49,7 +49,7 @@ function Checkout() {
   };
 
   return (
-    <div className="mx-auto max-w-[1500px] px-6 lg:px-10 py-16">
+    <div className="mx-auto max-w-[1500px] px-4 sm:px-6 lg:px-10 py-16">
       <div className="smallcaps text-muted-foreground">Section V</div>
       <h1 className="font-display text-5xl md:text-6xl mt-2 mb-12">Checkout</h1>
 

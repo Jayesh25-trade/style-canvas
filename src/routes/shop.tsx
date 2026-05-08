@@ -28,7 +28,7 @@ function Shop() {
   return (
     <div>
       <section className="border-b border-ink/20">
-        <div className="mx-auto max-w-[1500px] px-6 lg:px-10 py-16">
+        <div className="mx-auto max-w-[1500px] px-4 sm:px-6 lg:px-10 py-16">
           <div className="smallcaps text-muted-foreground">Issue 22 · The Catalog</div>
           <h1 className="font-display text-6xl md:text-7xl mt-3">The Shop</h1>
           <p className="mt-4 max-w-xl text-lg text-muted-foreground italic">
@@ -38,7 +38,7 @@ function Shop() {
       </section>
 
       <section className="py-10 border-b border-ink/15 sticky top-[68px] bg-background/90 backdrop-blur z-30">
-        <div className="mx-auto max-w-[1500px] px-6 lg:px-10 flex flex-wrap gap-3">
+        <div className="mx-auto max-w-[1500px] px-4 sm:px-6 lg:px-10 flex flex-wrap gap-3">
           {categories.map((c) => (
             <button
               key={c}
@@ -59,7 +59,7 @@ function Shop() {
       </section>
 
       <section className="py-16">
-        <div className="mx-auto max-w-[1500px] px-6 lg:px-10">
+        <div className="mx-auto max-w-[1500px] px-4 sm:px-6 lg:px-10">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-14">
             {filtered.map((p, i) => (
               <ProductCard key={p.id} product={p} index={i + 1} />

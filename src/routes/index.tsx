@@ -128,7 +128,7 @@ function Home() {
 
       {/* SPLIT FRAME — THROW (cable knit ↔ leather moto) — the hero split */}
       <section className="py-16 md:py-24">
-        <div className="mx-auto max-w-[1500px] px-6 lg:px-10 mb-8">
+        <div className="mx-auto max-w-[1500px] px-4 sm:px-6 lg:px-10 mb-8">
           <div className="smallcaps text-muted-foreground">№ 03 · The Cover Story</div>
           <h2 className="font-display text-4xl md:text-6xl mt-2 italic">Throw &amp; <span className="text-primary">catch</span> — a study in clothed motion.</h2>
         </div>
@@ -153,7 +153,7 @@ function Home() {
 
       {/* EDITORIAL DOUBLE PAGE — PARIS / COAST */}
       <section className="py-14 md:py-20 bg-cream/40">
-        <div className="mx-auto max-w-[1500px] px-6 lg:px-10">
+        <div className="mx-auto max-w-[1500px] px-4 sm:px-6 lg:px-10">
           <div className="flex items-end justify-between mb-10 border-b border-ink pb-4">
             <div>
               <div className="smallcaps text-muted-foreground">Spread · pp. 24–25</div>
@@ -194,7 +194,7 @@ function Home() {
 
       {/* THE HEIRLOOM EDIT */}
       <section className="py-16 md:py-24 bg-ink text-cream">
-        <div className="mx-auto max-w-[1500px] px-6 lg:px-10">
+        <div className="mx-auto max-w-[1500px] px-4 sm:px-6 lg:px-10">
           <div className="grid md:grid-cols-12 gap-10 items-end mb-12 border-b border-cream/30 pb-6">
             <div className="md:col-span-7">
               <div className="smallcaps text-primary">Section IV · Capsule</div>
@@ -227,7 +227,7 @@ function Home() {
 
       {/* SPLIT FRAME — THE PROPOSAL (leather moto ↔ velvet gown) */}
       <section className="py-16 md:py-24 bg-cream/40">
-        <div className="mx-auto max-w-[1500px] px-6 lg:px-10 mb-6 md:mb-8">
+        <div className="mx-auto max-w-[1500px] px-4 sm:px-6 lg:px-10 mb-6 md:mb-8">
           <div className="smallcaps text-muted-foreground">№ 06 · Spread, pp. 38–39</div>
           <h2 className="font-display text-3xl md:text-5xl mt-2 italic">A question, asked in <span className="text-primary">leather</span> &amp; <span className="text-primary">velvet</span>.</h2>
         </div>
@@ -251,7 +251,7 @@ function Home() {
 
       {/* THE LEATHER EDIT — magazine grid for jackets */}
       <section className="py-16 md:py-24 border-t border-ink/20">
-        <div className="mx-auto max-w-[1500px] px-6 lg:px-10">
+        <div className="mx-auto max-w-[1500px] px-4 sm:px-6 lg:px-10">
           <div className="grid md:grid-cols-12 gap-10 items-end mb-12 border-b border-ink pb-6">
             <div className="md:col-span-7">
               <div className="smallcaps text-primary">Section V · The Leather Edit</div>
@@ -274,7 +274,7 @@ function Home() {
 
       {/* EDITOR'S NOTE */}
       <section className="py-16 md:py-24 border-y border-ink/20 bg-cream/40">
-        <div className="mx-auto max-w-[1500px] px-6 lg:px-10 grid md:grid-cols-12 gap-10">
+        <div className="mx-auto max-w-[1500px] px-4 sm:px-6 lg:px-10 grid md:grid-cols-12 gap-10">
           <div className="md:col-span-3 smallcaps text-muted-foreground">
             From the editor
           </div>
@@ -312,7 +312,7 @@ function Home() {
 
       {/* FEATURED PRODUCTS */}
       <section className="py-14 md:py-20">
-        <div className="mx-auto max-w-[1500px] px-6 lg:px-10">
+        <div className="mx-auto max-w-[1500px] px-4 sm:px-6 lg:px-10">
           <div className="flex items-end justify-between mb-10 border-b border-ink pb-4">
             <div>
               <div className="smallcaps text-muted-foreground">Section II</div>

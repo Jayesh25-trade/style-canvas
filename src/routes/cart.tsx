@@ -15,7 +15,7 @@ function CartPage() {
   const shipping = subtotal > 200 || subtotal === 0 ? 0 : 12;
 
   return (
-    <div className="mx-auto max-w-[1500px] px-6 lg:px-10 py-16">
+    <div className="mx-auto max-w-[1500px] px-4 sm:px-6 lg:px-10 py-16">
       <div className="smallcaps text-muted-foreground">Section IV</div>
       <h1 className="font-display text-6xl mt-2 mb-12">Your Bag</h1>
 
