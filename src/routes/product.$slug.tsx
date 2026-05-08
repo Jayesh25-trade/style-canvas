@@ -68,8 +68,8 @@ function ProductPage() {
         </div>
       </section>
 
-      <section className="py-12">
-        <div className="mx-auto max-w-[1500px] px-4 sm:px-6 lg:px-10 grid lg:grid-cols-12 gap-10">
+      <section className="py-8 md:py-12">
+        <div className="mx-auto max-w-[1500px] px-4 sm:px-6 lg:px-10 grid lg:grid-cols-12 gap-8 md:gap-10">
           <div className="lg:col-span-7">
             <div className="aspect-[4/5] bg-muted overflow-hidden">
               <img src={product.image} alt={product.name} className="w-full h-full object-cover" />
@@ -78,10 +78,10 @@ function ProductPage() {
 
           <div className="lg:col-span-5 lg:sticky lg:top-24 self-start">
             <div className="smallcaps text-primary">{product.collection}</div>
-            <h1 className="font-display text-5xl md:text-6xl mt-3 leading-[0.95]">{product.name}</h1>
-            <div className="font-mono text-lg mt-4">${product.price}.00</div>
+            <h1 className="font-display text-4xl sm:text-5xl md:text-6xl mt-2 md:mt-3 leading-[0.95]">{product.name}</h1>
+            <div className="font-mono text-base md:text-lg mt-3 md:mt-4">${product.price}.00</div>
 
-            <p className="mt-8 text-lg italic text-muted-foreground leading-relaxed">{product.story}</p>
+            <p className="mt-6 md:mt-8 text-base md:text-lg italic text-muted-foreground leading-relaxed">{product.story}</p>
 
             <div className="mt-10">
               <div className="flex items-center justify-between mb-3">
