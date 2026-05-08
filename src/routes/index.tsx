@@ -127,7 +127,7 @@ function Home() {
       </div>
 
       {/* SPLIT FRAME — THROW (cable knit ↔ leather moto) — the hero split */}
-      <section className="py-24">
+      <section className="py-16 md:py-24">
         <div className="mx-auto max-w-[1500px] px-6 lg:px-10 mb-8">
           <div className="smallcaps text-muted-foreground">№ 03 · The Cover Story</div>
           <h2 className="font-display text-4xl md:text-6xl mt-2 italic">Throw &amp; <span className="text-primary">catch</span> — a study in clothed motion.</h2>
@@ -141,7 +141,7 @@ function Home() {
       </section>
 
       {/* SPLIT FRAME — LEATHER CATCH */}
-      <section className="py-24 bg-cream/50">
+      <section className="py-16 md:py-24 bg-cream/50">
         <SplitFrame
           image={splitCatchLeather}
           left={skirtThrow}
@@ -152,7 +152,7 @@ function Home() {
       </section>
 
       {/* EDITORIAL DOUBLE PAGE — PARIS / COAST */}
-      <section className="py-20 bg-cream/40">
+      <section className="py-14 md:py-20 bg-cream/40">
         <div className="mx-auto max-w-[1500px] px-6 lg:px-10">
           <div className="flex items-end justify-between mb-10 border-b border-ink pb-4">
             <div>
@@ -193,7 +193,7 @@ function Home() {
       </section>
 
       {/* THE HEIRLOOM EDIT */}
-      <section className="py-24 bg-ink text-cream">
+      <section className="py-16 md:py-24 bg-ink text-cream">
         <div className="mx-auto max-w-[1500px] px-6 lg:px-10">
           <div className="grid md:grid-cols-12 gap-10 items-end mb-12 border-b border-cream/30 pb-6">
             <div className="md:col-span-7">
@@ -250,7 +250,7 @@ function Home() {
       </section>
 
       {/* THE LEATHER EDIT — magazine grid for jackets */}
-      <section className="py-24 border-t border-ink/20">
+      <section className="py-16 md:py-24 border-t border-ink/20">
         <div className="mx-auto max-w-[1500px] px-6 lg:px-10">
           <div className="grid md:grid-cols-12 gap-10 items-end mb-12 border-b border-ink pb-6">
             <div className="md:col-span-7">
@@ -273,7 +273,7 @@ function Home() {
       </section>
 
       {/* EDITOR'S NOTE */}
-      <section className="py-24 border-y border-ink/20 bg-cream/40">
+      <section className="py-16 md:py-24 border-y border-ink/20 bg-cream/40">
         <div className="mx-auto max-w-[1500px] px-6 lg:px-10 grid md:grid-cols-12 gap-10">
           <div className="md:col-span-3 smallcaps text-muted-foreground">
             From the editor
@@ -290,7 +290,7 @@ function Home() {
       </section>
 
       {/* SPLIT FRAME — BALCONY (pajama vs shearling) */}
-      <section className="py-24">
+      <section className="py-16 md:py-24">
         <SplitFrame
           image={splitBalcony}
           left={pajama}
@@ -311,7 +311,7 @@ function Home() {
       </section>
 
       {/* FEATURED PRODUCTS */}
-      <section className="py-20">
+      <section className="py-14 md:py-20">
         <div className="mx-auto max-w-[1500px] px-6 lg:px-10">
           <div className="flex items-end justify-between mb-10 border-b border-ink pb-4">
             <div>
